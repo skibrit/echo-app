@@ -5,27 +5,37 @@ import {
   OptimizelyVariation,
   createInstance,
 } from "@optimizely/react-sdk";
-import AppWrapper from "./components/Wrapper/AppWrapper";
+import { v4 as uuidv4 } from "uuid";
+import DefualtComp from "./components/Default/DefaultComp";
+import SumComp from "./components/Sum/SumComp";
+import MultiplyComp from "./components/Multiply/MultiplyComp";
+import "./assets/scss/global.css";
 
 const opInstance = createInstance({
   sdkKey: "QYHzLSWgc9K6rp7LnLAnj",
 });
 
+const getUser = () => {
+  let token = localStorage.getItem("user-token");
+  if (!token) {
+    token = uuidv4();
+    localStorage.setItem("user-token", token);
+  }
+  return token;
+};
+
 function App() {
   return (
-    <OptimizelyProvider
-      optimizely={opInstance}
-      user={{ id: "QYHzLSWgc9K6rp7LnLAnj" }}
-    >
+    <OptimizelyProvider optimizely={opInstance} user={{ id: getUser() }}>
       <OptimizelyExperiment experiment="button_test">
         <OptimizelyVariation variation="sum">
-          <h2>Sum Values Feature</h2>
+          <SumComp />
         </OptimizelyVariation>
         <OptimizelyVariation variation="multiply">
-          <h2>Multiply Values Feature</h2>
+          <MultiplyComp />
         </OptimizelyVariation>
         <OptimizelyVariation default>
-          <h2>Static old Values Feature</h2>
+          <DefualtComp />
         </OptimizelyVariation>
       </OptimizelyExperiment>
     </OptimizelyProvider>
