@@ -1,18 +1,17 @@
 import React from "react";
 import "./style.scss";
+import CartIcon from "../../../assets/images/icons/carts.png";
 
 const CartView = () => {
   return (
     <div className="cart-view-wrapper">
       <div className="cart-view-left">
-        <div className="cart-item-count">5</div>
+        <span className="cart-item-title">My Cart</span>
+        <span className="cart-item-count">5</span>
       </div>
       <div className="cart-view-right">
         <div className="cart-view-icon-wrapper">
-          <img
-            src="https://mpng.subpng.com/20190404/ojo/kisspng-computer-icons-portable-network-graphics-scalable-shopping-cart-svg-png-icon-free-download-19-184-5ca6a1e6ab9a82.8989698815544242947029.jpg"
-            className="cart-view-icon"
-          />
+          <img src={CartIcon} className="cart-view-icon" />
         </div>
       </div>
     </div>

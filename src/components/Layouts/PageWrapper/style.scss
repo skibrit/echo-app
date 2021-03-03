@@ -1,6 +1,15 @@
 .page-wrapper{
+  position: relative;
+  .page-header{
+    position: fixed;
+    z-index: 100;
+    top:0;
+    left: 0;
+    width: 100%;
+  }
   .page-body{
     min-height: 100vh;
     border:1px solid rgba(0,0,0,.2);
+    margin-top: 55px;
   }
 }

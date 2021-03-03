@@ -8,7 +8,9 @@ const PageWrapper = ({ children }) => {
     <div className="page-wrapper">
       <div className="container">
         <div className="page-header">
-          <Header />
+          <div className="container page-inner-header">
+            <Header />
+          </div>
         </div>
         <div className="page-body">{children}</div>
         <div className="page-footer">
