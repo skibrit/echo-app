@@ -1,0 +1,11 @@
+.banner-slider{
+  width: 100%;
+  .banner-slider-wrapper{
+    height: 400px;
+    background-color: gray;
+    width: 100%;
+  }
+  .carousel, .carousel-inner,.carousel-item{
+    height: 100%;
+  }
+}

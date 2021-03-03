@@ -1,0 +1,14 @@
+@import "../../../assets/scss/custom_variables";
+.footer-wrapper{
+  background-color: $bg-color;
+  .footer-inner-wrapper{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  .footer-text{
+    margin: 0;
+    color: white;
+    font-size: 20px;
+  }
+}

@@ -5,6 +5,7 @@ import "../../assets/scss/global.scss";
 
 // components
 const Home = React.lazy(() => import("../Home/Home"));
+const CategoryPage = React.lazy(() => import("../Category/CategoryPage"));
 
 function App() {
   return (
@@ -12,6 +13,12 @@ function App() {
       <Router>
         <Switch>
           {/* partner routes */}
+          <Route
+            exact
+            path="/category/:id"
+            name="Category Page"
+            render={(props) => <CategoryPage {...props} />}
+          />
           <Route
             exact
             path="/"
