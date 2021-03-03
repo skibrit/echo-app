@@ -6,10 +6,8 @@ import {
   createInstance,
 } from "@optimizely/react-sdk";
 import { v4 as uuidv4 } from "uuid";
-import DefualtComp from "./components/Default/DefaultComp";
-import SumComp from "./components/Sum/SumComp";
-import MultiplyComp from "./components/Multiply/MultiplyComp";
-import "./assets/scss/global.css";
+import Wrapper from "./components/Wrapper/AppWrapper";
+import "./App.css";
 
 const opInstance = createInstance({
   sdkKey: "QYHzLSWgc9K6rp7LnLAnj",
@@ -27,17 +25,7 @@ const getUser = () => {
 function App() {
   return (
     <OptimizelyProvider optimizely={opInstance} user={{ id: getUser() }}>
-      <OptimizelyExperiment experiment="button_test">
-        <OptimizelyVariation variation="sum">
-          <SumComp />
-        </OptimizelyVariation>
-        <OptimizelyVariation variation="multiply">
-          <MultiplyComp />
-        </OptimizelyVariation>
-        <OptimizelyVariation default>
-          <DefualtComp />
-        </OptimizelyVariation>
-      </OptimizelyExperiment>
+      <Wrapper />
     </OptimizelyProvider>
   );
 }
