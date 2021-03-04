@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductPage from "../Product/ProductPage";
 import PageWrapper from "../Layouts/PageWrapper/PageWrapper";
 import "./style.scss";
 import { Button, Form, FormControl, Navbar } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
-const CategoryPage = ({}) => {
+const CategoryPage = ({ match: { params } }) => {
+  const [catId, setCatId] = useState(null);
+  const productList = useSelector((state) => state.product.store[catId]);
+
+  useEffect(() => {
+    let catId = params.id;
+    setCatId(catId);
+  }, []);
+
   return (
     <PageWrapper>
       <div className="category-page">
@@ -21,7 +30,7 @@ const CategoryPage = ({}) => {
           </div>
         </div>
         <div className="category-page-body">
-          <ProductPage pageTitle="Electronics" />
+          <ProductPage pageTitle={catId} dataList={productList} />
         </div>
       </div>
     </PageWrapper>

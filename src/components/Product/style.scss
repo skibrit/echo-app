@@ -30,6 +30,10 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
         &:hover{
           .product-img{
             transform: scale(1.2);

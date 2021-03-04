@@ -2,12 +2,32 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
+import ReduxToastr from "react-redux-toastr";
+import configStore from "./store/configureStore";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./assets/css/react-redux-toastr.min.css";
+
+const store = configStore();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+      <ReduxToastr
+        attention={true}
+        timeOut={5000}
+        newestOnTop={false}
+        preventDuplicates
+        position="top-center"
+        transitionIn="fadeIn"
+        transitionOut="fadeOut"
+        removeOnHover={false}
+        progressBar={false}
+        closeOnToastrClick
+      />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

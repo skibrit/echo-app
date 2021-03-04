@@ -6,6 +6,7 @@ import "../../assets/scss/global.scss";
 // components
 const Home = React.lazy(() => import("../Home/Home"));
 const CategoryPage = React.lazy(() => import("../Category/CategoryPage"));
+const Checkout = React.lazy(() => import("../Checkout/CheckoutPage"));
 
 function App() {
   return (
@@ -18,6 +19,12 @@ function App() {
             path="/category/:id"
             name="Category Page"
             render={(props) => <CategoryPage {...props} />}
+          />
+          <Route
+            exact
+            path="/checkout"
+            name="Checkout Page"
+            render={(props) => <Checkout {...props} />}
           />
           <Route
             exact
