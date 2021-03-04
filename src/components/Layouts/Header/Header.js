@@ -12,7 +12,7 @@ import CartView from "../CartView/CartView";
 const Header = () => {
   return (
     <Navbar bg="dark" expand="lg" variant="dark">
-      <Navbar.Brand href="#home">Echo Commerce</Navbar.Brand>
+      <Navbar.Brand href="/">Echo Commerce</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
