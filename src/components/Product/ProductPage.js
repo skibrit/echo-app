@@ -14,6 +14,7 @@ const ProductPage = ({ pageTitle, dataList }) => {
   const removeFromCartHandler = (pItem) => {
     dispatch(removeFromCart(pItem));
   };
+
   return (
     <div className="product-page">
       <div className="product-page-header">

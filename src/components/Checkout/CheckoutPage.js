@@ -12,7 +12,7 @@ const CheckOut = () => {
   const cartItems = useSelector((state) => state.user.cart);
   const totalAmount = cartItems
     .map((item) => parseInt(item.price))
-    .reduce((ac, c) => ac + c);
+    .reduce((ac, c) => ac + c, 0);
   const dispatch = useDispatch();
 
   const removeFromCartHandler = (pItem) => {
