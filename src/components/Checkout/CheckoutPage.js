@@ -22,7 +22,7 @@ const CheckOut = () => {
   const confirmPurchaseHandler = () => {
     try {
       dispatch(clearCart());
-      toastr.success("Thank you for your purchase");
+      toastr.success("Thank you for your purchase.");
     } catch (e) {
       console.log(e);
     }
