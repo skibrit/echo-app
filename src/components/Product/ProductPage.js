@@ -19,7 +19,7 @@ const ProductPage = ({ pageTitle, dataList, optimizely }) => {
   };
 
   const onProductViewHandler = (product) => {
-    console.log(`Product Viewed `, product);
+    console.log(`Product Viewed Item`, product);
     optimizely.track(`product_viewed`);
   };
 
