@@ -5,4 +5,12 @@
     justify-content: flex-end;
     padding: 0 25px;
   }
+
+  @media only screen and (max-width: 600px) {
+    .search-section{
+      .btn{
+        margin-top: 10px;
+      }
+    }
+  }
 }

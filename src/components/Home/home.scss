@@ -54,4 +54,10 @@
   .home-body{
     margin-bottom: 50px;
   }
+
+  @media only screen and (max-width: 770px) {
+    .desc-list{
+      flex-wrap: wrap;
+    }
+  }
 }
