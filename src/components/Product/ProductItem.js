@@ -2,10 +2,15 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import ImageLoader from "../Layouts/ImageLoader/ImageLoader";
 
-const ProductItem = ({ product, add, remove, inCart }) => {
+const ProductItem = ({ product, add, remove, inCart, onMouseOut }) => {
   const { title, price, image } = product;
   return (
-    <div className="product-item">
+    <div
+      className="product-item"
+      onMouseLeave={() => {
+        onMouseOut(product);
+      }}
+    >
       <div className="p-item-header">
         <div className="product-img-wrapper">
           <ImageLoader src={image} className="product-img" />

@@ -2,8 +2,11 @@ import React from "react";
 import "./style.scss";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import useRouteTracker from "../../../hooks/useRouteTracker";
+import { withOptimizely } from "@optimizely/react-sdk";
 
-const PageWrapper = ({ children }) => {
+const PageWrapper = ({ children, optimizely }) => {
+  useRouteTracker(optimizely);
   return (
     <div className="page-wrapper">
       <div className="container">
@@ -21,4 +24,4 @@ const PageWrapper = ({ children }) => {
   );
 };
 
-export default PageWrapper;
+export default withOptimizely(PageWrapper);

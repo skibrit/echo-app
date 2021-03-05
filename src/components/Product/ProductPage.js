@@ -3,16 +3,24 @@ import "./style.scss";
 import ProductItem from "./ProductItem";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../../actions/userAction";
+import { withOptimizely } from "@optimizely/react-sdk";
 
-const ProductPage = ({ pageTitle, dataList }) => {
+const ProductPage = ({ pageTitle, dataList, optimizely }) => {
   const dispatch = useDispatch();
   const userCart = useSelector((state) => state.user.cart);
 
   const addToCartHandler = (pItem) => {
     dispatch(addToCart(pItem));
+    optimizely.track(`add_to_cart`);
   };
   const removeFromCartHandler = (pItem) => {
     dispatch(removeFromCart(pItem));
+    optimizely.track(`remove_from_cart`);
+  };
+
+  const onProductViewHandler = (product) => {
+    console.log(`Product Viewed `, product);
+    optimizely.track(`product_viewed`);
   };
 
   return (
@@ -35,6 +43,7 @@ const ProductPage = ({ pageTitle, dataList }) => {
                 add={addToCartHandler}
                 remove={removeFromCartHandler}
                 inCart={inCart}
+                onMouseOut={onProductViewHandler}
               />
             );
           })}
@@ -43,4 +52,4 @@ const ProductPage = ({ pageTitle, dataList }) => {
   );
 };
 
-export default ProductPage;
+export default withOptimizely(ProductPage);
