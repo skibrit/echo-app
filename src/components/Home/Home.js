@@ -22,7 +22,21 @@ const Home = () => {
   return (
     <PageWrapper>
       <OptimizelyExperiment experiment="echo-commerce-test">
-        <OptimizelyVariation variation="control">
+        <OptimizelyVariation variation="withSlider">
+          <div className="home-page">
+            <BannerSlider />
+            <Description />
+            <div className="home-body">
+              <ProductPage pageTitle={"Electronics"} dataList={elList} />
+              <RowButton title="View More" url="/category/electronics" />
+              <ProductPage pageTitle={"Cloths"} dataList={clList} />
+              <RowButton title="View More" url="/category/cloths" />
+              <ProductPage pageTitle={"Food"} dataList={flList} />
+              <RowButton title="View More" url="/category/foods" />
+            </div>
+          </div>
+        </OptimizelyVariation>
+        <OptimizelyVariation variation="withoutSlider">
           <div className="home-page">
             <Description />
             <div className="home-body">
