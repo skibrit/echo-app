@@ -7,8 +7,9 @@ import DefaultBody from "../Layouts/DefaultBody/DefaultBody";
 import CheckoutItem from "./CheckoutItem";
 import { removeFromCart, clearCart } from "../../actions/userAction";
 import { toastr } from "react-redux-toastr";
+import { withOptimizely } from "@optimizely/react-sdk";
 
-const CheckOut = () => {
+const CheckOut = ({ optimizely }) => {
   const cartItems = useSelector((state) => state.user.cart);
   const totalAmount = cartItems
     .map((item) => parseInt(item.price))
@@ -17,6 +18,7 @@ const CheckOut = () => {
 
   const removeFromCartHandler = (pItem) => {
     dispatch(removeFromCart(pItem));
+    optimizely.track(`remove_from_cart`);
   };
 
   const confirmPurchaseHandler = () => {
@@ -86,4 +88,4 @@ const CheckOut = () => {
   );
 };
 
-export default CheckOut;
+export default withOptimizely(CheckOut);
