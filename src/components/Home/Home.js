@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <PageWrapper>
       <OptimizelyExperiment experiment="echo-commerce-test">
-        <OptimizelyVariation variation="without_slider">
+        <OptimizelyVariation variation="control">
           <div className="home-page">
             <Description />
             <div className="home-body">
