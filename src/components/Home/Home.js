@@ -31,7 +31,7 @@ const Home = () => {
               <RowButton title="View More" url="/category/electronics" />
               <ProductPage pageTitle={"Cloths"} dataList={clList} />
               <RowButton title="View More" url="/category/cloths" />
-              <ProductPage pageTitle={"Food"} dataList={flList} />
+              <ProductPage pageTitle={"Foods"} dataList={flList} />
               <RowButton title="View More" url="/category/foods" />
             </div>
           </div>
@@ -44,7 +44,7 @@ const Home = () => {
               <RowButton title="View More" url="/category/electronics" />
               <ProductPage pageTitle={"Cloths"} dataList={clList} />
               <RowButton title="View More" url="/category/cloths" />
-              <ProductPage pageTitle={"Food"} dataList={flList} />
+              <ProductPage pageTitle={"Foods"} dataList={flList} />
               <RowButton title="View More" url="/category/foods" />
             </div>
           </div>
@@ -58,7 +58,7 @@ const Home = () => {
               <RowButton title="View More" url="/category/electronics" />
               <ProductPage pageTitle={"Cloths"} dataList={clList} />
               <RowButton title="View More" url="/category/cloths" />
-              <ProductPage pageTitle={"Food"} dataList={flList} />
+              <ProductPage pageTitle={"Foods"} dataList={flList} />
               <RowButton title="View More" url="/category/foods" />
             </div>
           </div>

@@ -7,7 +7,7 @@ import DefaultBody from "../Layouts/DefaultBody/DefaultBody";
 import CheckoutItem from "./CheckoutItem";
 import { removeFromCart, clearCart } from "../../actions/userAction";
 import { toastr } from "react-redux-toastr";
-import { withOptimizely } from "@optimizely/react-sdk";
+import withOptimizely from "../../hocs/withOptimizely/withOptimizely";
 
 const CheckOut = ({ optimizely }) => {
   const cartItems = useSelector((state) => state.user.cart);
@@ -37,7 +37,7 @@ const CheckOut = ({ optimizely }) => {
           <h3 className="checkout-header-title">Checkout</h3>
         </div>
         <div className="checkout-body">
-          {cartItems && cartItems.length > 0 ? (
+          {cartItems?.length > 0 ? (
             <Table striped bordered hover>
               <thead>
                 <tr>
@@ -50,7 +50,7 @@ const CheckOut = ({ optimizely }) => {
                 </tr>
               </thead>
               <tbody>
-                {cartItems.map((item, index) => {
+                {cartItems?.map((item, index) => {
                   return (
                     <CheckoutItem
                       item={item}
@@ -66,7 +66,7 @@ const CheckOut = ({ optimizely }) => {
             <DefaultBody content="Your cart is empty" />
           )}
         </div>
-        {cartItems && cartItems.length > 0 && (
+        {cartItems?.length > 0 && (
           <div className="checkout-footer">
             <div className="cart-item-total-wrapper">
               <div className="cart-item-total-left">

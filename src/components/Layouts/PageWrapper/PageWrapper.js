@@ -3,7 +3,7 @@ import "./style.scss";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import useRouteTracker from "../../../hooks/useRouteTracker";
-import { withOptimizely } from "@optimizely/react-sdk";
+import withOptimizely from "../../../hocs/withOptimizely/withOptimizely";
 
 const PageWrapper = ({ children, optimizely }) => {
   useRouteTracker(optimizely);

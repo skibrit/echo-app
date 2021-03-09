@@ -15,14 +15,7 @@ const useRouteTracker = (optimizely) => {
       const {
         location: { pathname },
       } = history;
-      let finalPathName = "home";
-      if (pathname) {
-        let newPathname = pathname.substring(1);
-        if (newPathname) {
-          let pathArr = newPathname.split("/");
-          finalPathName = pathArr[0];
-        }
-      }
+      const finalPathName = pathname?.substring(1)?.split("/")[0] || "home";
       console.log(`Final Path Name `, finalPathName);
       optimizely.track(`${finalPathName}_page_view`);
     } catch (e) {

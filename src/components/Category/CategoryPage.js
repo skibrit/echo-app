@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductPage from "../Product/ProductPage";
 import PageWrapper from "../Layouts/PageWrapper/PageWrapper";
 import "./style.scss";
-import { Button, Form, FormControl, Navbar } from "react-bootstrap";
+import { Button, Form, FormControl } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import DefaultBody from "../Layouts/DefaultBody/DefaultBody";
 
@@ -61,7 +61,7 @@ const CategoryPage = ({ match: { params } }) => {
           </div>
         </div>
         <div className="category-page-body">
-          {list && list.length > 0 ? (
+          {list?.length > 0 ? (
             <ProductPage pageTitle={catId} dataList={list} />
           ) : (
             <DefaultBody content="No product found" />
